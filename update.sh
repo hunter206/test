@@ -1,5 +1,7 @@
 #update with github
 python simMeiJi.py
+git add README.md
+git commit -m "practice"
 git add simMeiJi.py
 git commit -m "simulate the measurment process of roadheader"
 git add update.sh
