@@ -17,7 +17,7 @@ Cbc2 = np.matrix([[0,0,1],
 		  [1,0,0],
 		  [0,1,0]])
 C_n = np.matrix([0,0,0]).T
-D_n = np.matrix([1,30,2]).T
+D_n = np.matrix([1,60,2]).T
 M_n = np.matrix([3,10,-4]).T
 lBA_b = np.matrix([0,-1,0]).T
 
