@@ -6,6 +6,8 @@ ROLL = 20*np.pi/180
 PITCH = 40*np.pi/180
 
 L0 = 1;
+A_b = np.matrix([0,-L0/2,0])
+B_b = np.matrix([0,L0/2,0])
 C_n = np.matrix([0,0,0])
 M_n = np.matrix([3,10,-4])
 lBA_b = np.matrix([0,-1,0]).T
@@ -22,9 +24,5 @@ R1 = np.matrix([[1,0,0],
 
 Cbn = (R2*R1*R3).I
 lBA_n = Cbn*lBA_b
-print('Cbn=',Cbn)
-print('lBA_n',lBA_n)
-
-
-
-
+print('Cbn=')
+print(Cbn)
