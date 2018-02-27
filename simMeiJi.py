@@ -56,4 +56,14 @@ print(eBA_n)
 #############solving##################
 #AA = [[eCD_n],[eDB_n],[eBA_n]]
 AA = np.column_stack((np.column_stack((eCD_n,eDB_n)),eAC_n))
+print('AA=')
 print(AA)
+BB = eBA_n
+print('BB=')
+print(BB)
+x = np.linalg.solve(AA,BB)
+print('x=')
+print(x)
+PM = np.multiply(x[2][0],-eAC_n)+np.multiply(L0/2,-eBA_n)
+print(x[2][0])
+
