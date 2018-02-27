@@ -5,10 +5,11 @@ YAW =30*np.pi/180
 ROLL = 20*np.pi/180
 PITCH = 40*np.pi/180
 
-L0 = 1;
-A_b = np.matrix([0,-L0/2,0]).T
-B_b = np.matrix([0,L0/2,0]).T
-
+L = 1;
+A_b = np.matrix([0,-L/2.0,0]).T
+B_b = np.matrix([0,L/2.0,0]).T
+print('B_b=')
+print(B_b)
 Cbc1 = np.matrix([[0,0,1],
 		  [-1,0,0],
 		  [0,-1,0]])
@@ -34,11 +35,13 @@ Cbn = (R2*R1*R3).I
 Tbn = M_n
 
 A_n = Cbn*A_b + Tbn
-#print(A_n)
+print('A_n=')
+print(A_n)
 B_n = Cbn*B_b + Tbn
-#print(B_n)
+print('B_n=')
+print(B_n)
 
-M_n = np.matrix([3,10,-4])
+#M_n = np.matrix([3,10,-4]).T
 eAC_n = (C_n - A_n)/np.linalg.norm(C_n - A_n)
 eCD_n = (D_n - C_n)/np.linalg.norm(D_n - C_n)
 eDB_n = (B_n - D_n)/np.linalg.norm(B_n - D_n)
@@ -58,12 +61,12 @@ print(eBA_n)
 AA = np.column_stack((np.column_stack((eCD_n,eDB_n)),eAC_n))
 print('AA=')
 print(AA)
-BB = eBA_n
+BB = np.multiply(L,-eBA_n)
 print('BB=')
 print(BB)
 x = np.linalg.solve(AA,BB)
 print('x=')
 print(x)
-PM = np.multiply(x[2][0],-eAC_n)+np.multiply(L0/2,-eBA_n)
-print(x[2][0])
-
+PM = np.multiply(x[2][0],-eAC_n)+np.multiply(L/2.0,-eBA_n)
+print('M=')
+print(PM)
