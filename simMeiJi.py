@@ -16,7 +16,9 @@ Cbc2 = np.matrix([[0,0,1],
 		  [1,0,0],
 		  [0,1,0]])
 C_n = np.matrix([0,0,0]).T
+D_n = np.matrix([1,30,2]).T
 M_n = np.matrix([3,10,-4])
+
 lBA_b = np.matrix([0,-1,0]).T
 
 R3 = np.matrix([[np.cos(YAW),-np.sin(YAW),0],
@@ -28,7 +30,6 @@ R2 = np.matrix([[np.cos(ROLL),0,np.sin(ROLL)],
 R1 = np.matrix([[1,0,0],
 		[0,np.cos(PITCH),-np.sin(PITCH)],
 		[0,np.sin(PITCH),np.cos(PITCH)]])
-
 Cbn = (R2*R1*R3).I
 
 Tbn = M_n.T
@@ -36,14 +37,14 @@ Tbn = M_n.T
 A_n = Cbn*A_b.T + Tbn
 B_n = Cbn*B_b.T + Tbn
 
-#print(C_n)
-#print(A_n)
-
-#print(np.linalg.norm(C_n - A_n))
 eAC_n = (C_n - A_n)/np.linalg.norm(C_n - A_n)
+eDB_n = (B_n - D_n)/np.linalg.norm(B_n - D_n)
+lBA_n = Cbn*lBA_b
+eBA_n = lBA_n/np.linalg.norm(lBA_n)
+
 print('eAC_n=')
 print(eAC_n)
-
-lBA_n = Cbn*lBA_b
-print('Cbn=')
-print(Cbn)
+print('eDB_n=')
+print(eDB_n)
+print('eBA_n=')
+print(eBA_n)
