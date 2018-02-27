@@ -22,8 +22,8 @@ R1 = np.matrix([[1,0,0],
 
 Cbn = (R2*R1*R3).I
 lBA_n = Cbn*lBA_b
-print(Cbn)
-print(lBA_n)
+Cbn = print(Cbn)
+lBA_n = print(lBA_n)
 
 
 
