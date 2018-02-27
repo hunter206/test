@@ -7,6 +7,7 @@ PITCH = 40*np.pi/180
 
 L0 = 1;
 A_b = np.matrix([0,-L0/2,0])
+#Cbc1 = 
 B_b = np.matrix([0,L0/2,0])
 C_n = np.matrix([0,0,0])
 M_n = np.matrix([3,10,-4])
