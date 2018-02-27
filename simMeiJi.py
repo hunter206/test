@@ -1,10 +1,10 @@
 import numpy as np
 import scipy
 
-M_n = np.matrix([2,7,10]).T
-YAW =5*np.pi/180
-ROLL = 60*np.pi/180
-PITCH = 15*np.pi/180
+M_n = np.matrix([4,9,6]).T
+YAW =34*np.pi/180
+ROLL = 56*np.pi/180
+PITCH = 22*np.pi/180
 
 L = 1;
 A_b = np.matrix([0,-L/2.0,0]).T
@@ -18,8 +18,7 @@ Cbc2 = np.matrix([[0,0,1],
 		  [1,0,0],
 		  [0,1,0]])
 C_n = np.matrix([0,0,0]).T
-D_n = np.matrix([1,60,2]).T
-#M_n = np.matrix([2,7,10]).T
+D_n = np.matrix([0/8,58,2.1]).T
 lBA_b = np.matrix([0,-1,0]).T
 
 R3 = np.matrix([[np.cos(YAW),-np.sin(YAW),0],
