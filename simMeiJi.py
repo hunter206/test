@@ -1,4 +1,3 @@
-#参考坐标系东北天，载体坐标系右前上
 import numpy as np
 import scipy
 
