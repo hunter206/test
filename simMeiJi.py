@@ -5,8 +5,9 @@ YAW =30*np.pi/180
 ROLL = 20*np.pi/180
 PITCH = 40*np.pi/180
 
-C = np.matrix([0,0,0])
-M = np.matrix([3,10,-4])
+L0 = 1;
+C_n = np.matrix([0,0,0])
+M_n = np.matrix([3,10,-4])
 lBA_b = np.matrix([0,-1,0]).T
 
 R3 = np.matrix([[np.cos(YAW),-np.sin(YAW),0],
