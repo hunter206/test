@@ -19,7 +19,7 @@ R1 = np.matrix([[1,0,0],
 		[0,np.cos(PITCH),-np.sin(PITCH)],
 		[0,np.sin(PITCH),np.cos(PITCH)]])
 
-Cbn = np.inv(R2*R1*R3)
+Cbn = (R2*R1*R3).I
 lBA_n = Cbn*lBA_b
 print(Cbn)
 print(lBA_n)
